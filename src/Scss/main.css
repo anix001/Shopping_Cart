@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 67.5%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/*Navbat*/
+nav {
+  background-color: #000;
+  height: 8vh;
+}
+
+nav .navbar .logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav .navbar .logo a {
+  color: #fff;
+}
+
+nav .navbar .nav-items .nav-item {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/*products*/
+.products {
+  background-color: #C8C4C4;
+  padding: 10rem 0;
+}
+
+.products h1 {
+  color: #000;
+  font-size: 3rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.products h1::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  height: .2rem;
+  background-color: #000;
+  left: 0;
+  width: 100%;
+}
+
+.product {
+  padding: .5rem;
+}
+
+.product .product-contents {
+  background-color: #7C7B7B;
+  border: 0.1rem solid #000;
+  padding: .5rem;
+}
+
+.product .product_image {
+  height: 20rem;
+  border: 0.1rem solid #000;
+}
+
+.product .product_title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+  padding: 1rem 0;
+}
+
+.product .product_desc {
+  font-size: 1.4rem;
+  color: #000;
+}
+
+.product .price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.product button {
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+  border: 0.1rem solid #000;
+  padding: .5rem;
+  -webkit-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
+  background-color: #fff;
+  color: #000;
+}
+
+.product button:hover {
+  color: #fff;
+  background-color: #000;
+  border: 0.1rem solid #fff;
+}
+/*# sourceMappingURL=main.css.map */
