@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 67.5%;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+//color
+$black : #000;
+$white: #fff;
+$light-grey:#C8C4C4;
+$dark-gey:#7C7B7B;
+
+
+/*Navbat*/@at-root
+
+nav{
+    background-color: #000;
+    height: 8vh;
+    & .navbar{
+        & .logo{
+            
+            font-size: 2rem;
+            font-weight: 600;
+           & a{
+               color: $white;
+           }
+        }
+        & .nav-items{
+            & .nav-item{
+                font-size: 2.5rem;
+                color:$white;
+            }
+        }
+    }
+}
+
+
+/*products*/@at-root
+.products{
+   background-color: $light-grey;
+   padding: 10rem 0;
+   & h1{
+       color: $black;
+       font-size: 3rem;
+       font-weight: 600;
+       position: relative;
+       &::before{
+           position: absolute;
+           content: '';
+           bottom: 0;
+           height: .2rem;
+           background-color: $black;
+           left: 0;
+           width: 100%;
+       }
+   } 
+}
+
+.product{
+    padding: .5rem;
+    & .product-contents{
+        background-color: $dark-gey;
+        border: .1rem solid $black;
+        padding: .5rem;
+    }
+    & .product_image{
+        height: 20rem;
+        border: .1rem solid $black;
+    }
+    & .product_title{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color:$black;  
+        padding: 1rem 0; 
+    }
+    & .product_desc{
+        font-size: 1.4rem;
+        color: $black;
+    }
+    & .price{
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $black;
+    }
+    & button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        outline: none;
+        border: .1rem solid $black;
+        padding: .5rem;
+        transition: .5s all ease-in-out;
+        background-color: $white;
+        color: $black;
+        &:hover{
+           color: $white;
+           background-color: $black;
+           border: .1rem solid $white;
+        }
+    }
+}
