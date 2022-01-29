@@ -18,7 +18,9 @@ $black : #000;
 $white: #fff;
 $light-grey:#C8C4C4;
 $dark-gey:#7C7B7B;
-
+$light-green : #27BB1B ;
+$red: #EA210A;
+$dark-green: #117609;
 
 /*Navbat*/@at-root
 
@@ -68,28 +70,27 @@ nav{
 .product{
     padding: .5rem;
     & .product-contents{
-        background-color: $dark-gey;
+        background-color: $black;
         border: .1rem solid $black;
         padding: .5rem;
     }
     & .product_image{
         height: 20rem;
-        border: .1rem solid $black;
     }
     & .product_title{
         font-size: 1.8rem;
         font-weight: 600;
-        color:$black;  
+        color:$white;  
         padding: 1rem 0; 
     }
     & .product_desc{
         font-size: 1.4rem;
-        color: $black;
+        color: $white;
     }
     & .price{
         font-size: 1.6rem;
         font-weight: 600;
-        color: $black;
+        color: $white;
     }
     & button {
         font-size: 1.5rem;
@@ -102,8 +103,149 @@ nav{
         color: $black;
         &:hover{
            color: $white;
-           background-color: $black;
+           background-color: $light-green;
            border: .1rem solid $white;
+        }
+    }
+}
+
+//cart-item
+.cart-item{
+    padding: 2rem 0;
+    & .cart-item_image{
+        height: 8rem;
+        width: 8%;
+    }
+    & .cart-item_title{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color:$black; 
+    }
+    & .price{
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $black;
+    }
+    & .cart-item-quantity{
+        & label{
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: black;
+        }
+        & input{
+            width: 5rem;
+            padding: .5rem 1rem;
+            border: .2rem solid $black;
+            border-radius: .5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+    }
+    & button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        outline: none;
+        border: .1rem solid $black;
+        padding: .5rem;
+        transition: .5s all ease-in-out;
+        background-color: $white;
+        color: $black;
+        &:hover{
+           color: $white;
+           background-color: $red;
+           border: .1rem solid $white;
+        }
+    }
+}
+//cart
+.cart{
+    padding: 10rem 0;
+     .cart-items{
+         & p{
+             margin: 8rem 0;
+             font-size: 2.5rem;
+             font-weight: 600;
+             color: $black;
+         }
+     }
+    & .cart-summary{
+        padding: 2rem 0;
+        margin: 7.5rem 0 0;
+        & .cart-title{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $black;
+            border-bottom: .2rem solid $black;
+            width: fit-content;
+            margin-bottom: 1rem;
+        }
+        & .summary_price{
+            padding: 1rem 0;
+            & label{
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: $black;
+                padding: 0 1rem 0 0;
+            }
+            & span{
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: $black;
+            }
+        }
+        & button {
+            outline: none;
+            border: .1rem solid $black;
+            padding: .5rem;
+            transition: .5s all ease-in-out;
+            background-color: $white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $black;
+            &:hover{
+                color: $white;
+               background-color: $dark-green;
+               border: .1rem solid $white;
+            }
+        }
+    }
+}
+
+
+/*Footer*/
+.footer{
+    padding: 4rem 0;
+    background-color: $black;
+    & .footer-contents{
+        display: flex;
+        & .footer-logo-section{
+            width: 60%;
+            & .footer-logo{
+                padding-bottom: 1rem;
+                & a{
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: $white;
+                }
+            }
+            & .footer-description{
+                & p{
+                    color: $white;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                }
+            }
+            & .connect-with-us{
+                color: $white;
+                padding: 1rem 0;
+                display: flex;
+                align-items: center;
+                font-size: 1.4rem;
+                & svg{
+                    font-size: 3rem;
+                    padding-right: 1rem;
+                }
+            }
         }
     }
 }

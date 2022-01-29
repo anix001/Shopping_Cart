@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import { connect } from 'react-redux';
 import CartItem from './CartItem/cartItem';
+import '../../Scss/main.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Cart = ({cart}) => {
@@ -19,22 +22,51 @@ const Cart = ({cart}) => {
       setTotalItems(items);
       setTotalPrice(price);
     }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
+    
+    const notify = () => toast.success('Sucessfully Checkout!!', {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+
+    // const btnClicked = () => {
+     
+    // }
 
   return <div className='cart container'>
      <div className="cart-items">
-         {cart.map((item) => (
+     { cart.length === 0 ? <p className='text-center'>You have not selected any items.</p>  : cart.map((item) => (
              <CartItem key={item.id} item={item}/>
-         ))}
+      )) }
+         
      </div>
      <div className="cart-summary">
          <h4 className="cart-title">
-            cart Summary
+            Cart Summary
          </h4>
          <div className="summary_price">
-             <span>Total : ({totalItems} items)</span>
+            <label>Total</label>
+             <span>: ({totalItems} items)</span>
              <span>$ {totalPrice}</span>
          </div>
-         <button>Proceed to Checkout</button>
+         <button onClick={()=>{notify()}}>
+           Proceed to Checkout
+         </button>
+         <ToastContainer
+          position="top-center"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          />
      </div>
   </div>;
 };

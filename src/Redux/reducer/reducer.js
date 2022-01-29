@@ -76,7 +76,7 @@ const initial_state ={
           },
     ], //{id, title, desc, price, img}
     cart : [], //{id, title, desc, price, img, qty}
-    // currentItem : null,
+    currentItem : null,
 }
 
 const productReducer = (state = initial_state, action) =>{
@@ -106,9 +106,19 @@ const productReducer = (state = initial_state, action) =>{
             cart: state.cart.filter((item) => item.id !== action.payload.id),
           };
       case actionTypes.ADJUST_QUANTITY:
-          return {};
-    //   case actionTypes.LOAD_CURRENT_ITEM:
-    //       return {};
+          return {
+            ...state,
+            cart: state.cart.map((item) => 
+            item.id === action.payload.id
+            ? {...item, qty: item.qty + 1}
+            : item
+            )
+          };
+      case actionTypes.LOAD_CURRENT_ITEM:
+          return {
+            ...state,
+            currentItem:action.payload,
+          };
       default:
           return state;
   }
