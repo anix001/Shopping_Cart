@@ -109,6 +109,23 @@ nav .navbar .nav-items .nav-item {
   border: 0.1rem solid #fff;
 }
 
+.product button a {
+  text-decoration: none;
+  color: #000;
+}
+
+.product button:hover a {
+  color: #fff;
+}
+
+.product button.view-item:hover {
+  background-color: #B6BB1B;
+}
+
+.product button.view-item:hover a {
+  color: #000;
+}
+
 .cart-item {
   padding: 2rem 0;
 }
