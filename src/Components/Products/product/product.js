@@ -28,7 +28,7 @@ const Product = ({product, addToCart}) => {
         <h3 className="price">$ {product.price}</h3>
         <div className="btns d-flex justify-content-between">
           <button  onClick={()=> {addToCart(product.id); notify();}}>Add to cart</button>
-          <button onClick={product}><Link to={`/product/${product.id}`}>View Item</Link></button>
+          <button className='view-item' onClick={product}><Link to={`/product/${product.id}`}>View Item</Link></button>
         </div>
         <ToastContainer
           position="top-center"

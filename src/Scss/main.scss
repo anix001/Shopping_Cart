@@ -21,6 +21,7 @@ $dark-gey:#7C7B7B;
 $light-green : #27BB1B ;
 $red: #EA210A;
 $dark-green: #117609;
+$mix-yellow:#B6BB1B ;
 
 /*Navbat*/@at-root
 
@@ -105,6 +106,21 @@ nav{
            color: $white;
            background-color: $light-green;
            border: .1rem solid $white;
+        }
+        & a{
+            text-decoration: none;
+            color: $black;
+        }
+        &:hover a{
+            color: $white;
+        }
+    }
+    & button.view-item{
+        &:hover{
+            background-color: $mix-yellow;
+        }
+        &:hover a{
+            color: $black;
         }
     }
 }
