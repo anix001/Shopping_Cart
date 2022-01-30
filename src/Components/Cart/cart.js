@@ -4,9 +4,10 @@ import CartItem from './CartItem/cartItem';
 import '../../Scss/main.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { emptyCart } from '../../Redux/reducer/actions';
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart, emptyCart}) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
   
@@ -31,11 +32,11 @@ const Cart = ({cart}) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
+      },
+      emptyCart()
+      );
 
-    // const btnClicked = () => {
-     
-    // }
+    
 
   return <div className='cart container'>
      <div className="cart-items">
@@ -53,7 +54,7 @@ const Cart = ({cart}) => {
              <span>: ({totalItems} items)</span>
              <span>$ {totalPrice}</span>
          </div>
-         <button onClick={()=>{notify()}}>
+         <button onClick={()=>{ notify()}}>
            Proceed to Checkout
          </button>
          <ToastContainer
@@ -77,5 +78,11 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return{
+    emptyCart:()=>dispatch(emptyCart()),
+  }
+}
 
-export default connect(mapStateToProps)(Cart);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);

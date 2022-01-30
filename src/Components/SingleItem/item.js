@@ -1,12 +1,12 @@
 import React from 'react';
-import {connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { addToCart } from '../../Redux/reducer/actions';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 const Item = ({current, addToCart}) => {
   return <div>
-      <Navbar/>
+       <Navbar/>
       <div className="item-contents">
         <div className="item_image">
             <img src={current.image} alt={current.title} />
@@ -18,7 +18,7 @@ const Item = ({current, addToCart}) => {
           <button onClick={()=> addToCart(current.id)}>Add to cart</button>
         </div>
       </div>
-      <Footer/>
+      <Footer/> 
   </div>;
 };
 
@@ -33,6 +33,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Item);
+export default connect(mapStateToProps,mapDispatchToProps)(Item);
 
 

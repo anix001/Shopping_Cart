@@ -110,7 +110,7 @@ const productReducer = (state = initial_state, action) =>{
             ...state,
             cart: state.cart.map((item) => 
             item.id === action.payload.id
-            ? {...item, qty: item.qty + 1}
+            ? {...item, qty: action.payload.qty}
             : item
             )
           };
@@ -119,6 +119,11 @@ const productReducer = (state = initial_state, action) =>{
             ...state,
             currentItem:action.payload,
           };
+      case actionTypes.EMPTY_CART:
+        return{
+          ...state,
+          cart:[]
+        }
       default:
           return state;
   }
